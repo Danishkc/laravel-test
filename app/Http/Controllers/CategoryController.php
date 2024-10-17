@@ -15,7 +15,8 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         $success = session('success');
-        return Inertia::render('Categories/Index', compact('categories', 'success', ));
+        $main = '1';
+        return Inertia::render('Categories/Index', compact('categories', 'success', 'main' ));
     }
 
     /**

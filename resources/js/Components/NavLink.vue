@@ -42,13 +42,13 @@
     <div class="sidebar">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link " href="/categories">Category</a>
+          <a :class="['nav-link', props.main == 1 ? 'active' : '']" href="/categories">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/products">Products</a>
+          <a :class="['nav-link', props.main == 2 ? 'active' : '']" href="/products">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/sales">Sales</a>
+          <a :class="['nav-link', props.main == 3 ? 'active' : '']" href="/sales">Sales</a>
         </li>
       </ul>
     </div>
@@ -58,6 +58,8 @@
 <script setup>
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
+
+const props = defineProps(['main'])
 </script>
 
 <style scope>
@@ -79,20 +81,24 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 }
 
 .nav-link:hover {
-  background-color: #f7f7f7;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  background-color: rgb(204, 201, 201);
+  border-radius: 10px;
   transition: 0.3s;
 }
 
 .sub-menu .nav-item:hover {
-  background-color: #f7f7f7;
+  background-color: rgb(204, 201, 201);
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid  rgb(204, 201, 201);;
   transition: 0.3s;
 }
 .content {
     margin-left: 200px; 
     margin-top: 56px;
   }
+
+.active {
+  background-color: rgb(210, 208, 208);
+  border-radius: 10px;
+}
 </style>

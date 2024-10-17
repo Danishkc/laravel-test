@@ -17,7 +17,8 @@ class ProductController extends Controller
         $products = Product::with('category')->get();
         $categories = Category::all();
         $success = session('success');
-        return Inertia::render('Products/Index', compact('products', 'categories', 'success'));
+        $main = '2';
+        return Inertia::render('Products/Index', compact('products', 'categories', 'success', 'main'));
     }
 
     /**

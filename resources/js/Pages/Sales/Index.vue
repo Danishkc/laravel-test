@@ -1,5 +1,5 @@
 <template>
-    <NavLink />
+    <NavLink :main="props.main" />
     <div class="content">
         <div class="card">
             <div class="container">
@@ -65,7 +65,7 @@ import { ref } from 'vue';
 import NavLink from '@/Components/NavLink.vue';
 import { useForm } from '@inertiajs/vue3';
 
-const props = defineProps(['products', 'sales', 'success', 'errors']);
+const props = defineProps(['products', 'sales', 'success', 'errors', 'main']);
 
 const total_price = ref(0);
 

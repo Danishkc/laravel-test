@@ -17,7 +17,8 @@ class SaleController extends Controller
         $sales = Sale::with('product')->get();
         $products = Product::all();
         $success = session('success');
-        return Inertia::render('Sales/Index', compact('sales', 'products', 'success'));
+        $main = '3';
+        return Inertia::render('Sales/Index', compact('sales', 'products', 'success', 'main'));
     }
 
     /**
